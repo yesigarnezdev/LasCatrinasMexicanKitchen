@@ -1108,3 +1108,9 @@ a {
   position: relative;
   z-index: 2;
 }
+
+
+.menu-gallery {
+  padding: 80px 20px;
+  background: #0f0f0f;
+}
