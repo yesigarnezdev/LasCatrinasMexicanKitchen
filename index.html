@@ -3,431 +3,432 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>L Mil Amores | Authentic Mexican Restaurant — Aurora, IL</title>
-  <meta name="description" content="L Mil Amores Restaurant in Aurora, IL — authentic, flavor-packed Mexican cuisine. Tacos, tortas, burritos, margaritas and more. Visit us at 518 S Lake St, Aurora." />
-  <meta name="keywords" content="Mexican restaurant Aurora IL, authentic Mexican food, tacos Aurora, margaritas Aurora, L Mil Amores, North Aurora, Yorkville, Oswego" />
-  <meta name="author" content="L Mil Amores Restaurant" />
-  <meta property="og:title" content="L Mil Amores | Authentic Mexican Restaurant" />
-  <meta property="og:description" content="Authentic, flavor-packed Mexican cuisine in Aurora, IL. Fresh ingredients, traditional recipes, signature margaritas." />
+  <meta name="description" content="La Chinampa Mexican Food – Authentic Mexican cuisine in Milwaukee, WI. Two locations serving the best tacos, burritos, and traditional Mexican dishes." />
+  <meta name="keywords" content="La Chinampa, Mexican food, Milwaukee, tacos, burritos, authentic Mexican restaurant, Wisconsin" />
+  <meta name="author" content="La Chinampa Mexican Food" />
+  <meta property="og:title" content="La Chinampa Mexican Food – Milwaukee, WI" />
+  <meta property="og:description" content="Authentic Mexican flavors in the heart of Milwaukee. Two locations, one soul. Order online today!" />
+  <meta property="og:image" content="assets/img/logochinampa.png" />
   <meta property="og:type" content="restaurant" />
-  <meta property="og:url" content="https://lmilamores.com" />
-  <meta name="geo.region" content="US-IL" />
-  <meta name="geo.placename" content="Aurora, Illinois" />
-  <link rel="icon" type="image/png" href="assets/img/MilAmoresLogo.png" />
+  <meta name="theme-color" content="#3d0066" />
+  <title>La Chinampa Mexican Food – Milwaukee, WI</title>
+  <link rel="icon" type="image/png" href="assets/img/logochinampa.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Abril+Fatface&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Menutech Script -->
+  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+  <script src="https://menutech.xyz/menutechUI.min.js"></script>
 </head>
 <body>
 
-  <div class="promo-bar">
-    <span class="promo-icon">✦</span>
-    <span>5% OFF YOUR FIRST ORDER — Come taste the tradition</span>
-    <span class="promo-icon">✦</span>
+  <!-- ═══════════════════════════════════════════ PARTICLES BG -->
+  <div id="particles"></div>
+
+  <!-- ═══════════════════════════════════════════ AUDIO PLAYER -->
+  <div id="audio-player">
+    <button id="audio-btn" onclick="toggleAudio()" title="Toggle Music">
+      <i class="fas fa-music" id="audio-icon"></i>
+    </button>
+    <audio id="bg-audio" loop>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+    </audio>
+    <span id="audio-label">🎵 Recuérdame</span>
   </div>
 
-  <header class="site-header" id="top">
-    <div class="header-inner">
-      <a href="#top" class="logo-link">
-        <img src="assets/img/MilAmoresLogo.png" alt="L Mil Amores Logo" class="logo-img" />
+  <!-- ═══════════════════════════════════════════ NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="assets/img/logochinampa.png" alt="La Chinampa Logo" />
       </a>
-      <nav class="main-nav" id="main-nav">
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#videos">Videos</a>
-        <a href="#hours">Hours</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+      <button class="burger" id="burger" aria-label="Menu" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" onclick="closeMenu()"><span data-en="About" data-es="Nosotros">About</span></a></li>
+        <li><a href="#gallery" onclick="closeMenu()"><span data-en="Gallery" data-es="Galería">Gallery</span></a></li>
+        <li><a href="#locations" onclick="closeMenu()"><span data-en="Locations" data-es="Ubicaciones">Locations</span></a></li>
+        <li><a href="#order" onclick="closeMenu()"><span data-en="Order" data-es="Ordenar">Order</span></a></li>
+        <li><a href="#contact" onclick="closeMenu()"><span data-en="Contact" data-es="Contacto">Contact</span></a></li>
+        <li>
+          <button class="lang-toggle" id="lang-btn" onclick="toggleLang()">
+            <span id="lang-label">🌐 ES</span>
+          </button>
+        </li>
+      </ul>
     </div>
-  </header>
+  </nav>
 
-   <section class="hero">
-
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="assets/img/videohero.mp4" type="video/mp4">
-    </video>
-
-    <div class="hero-overlay"></div>
-
+  <!-- ═══════════════════════════════════════════ HERO -->
+  <section id="hero">
+    <div class="hero-bg-overlay"></div>
     <div class="hero-content">
-      <p class="hero-tagline">Aurora, Illinois</p>
-      <h1 class="hero-title">L Mil Amores</h1>
-      <p class="hero-slogan">El auténtico sabor mexicano que te hace sentir vivo</p>
-      <div class="hero-divider">
-        <span></span><span class="diamond">◆</span><span></span>
+      <div class="hero-logo-wrap">
+        <img src="assets/img/logochinampa.png" alt="La Chinampa" class="hero-logo" />
       </div>
-       <menutech-orders
-      cuid="90732855-a4a0-4329-8eba-70b77da15bc6"
-      ruid="214e4562-c954-4f72-b51b-7fabd45b61ba"
-      color="#ffffff"
-      background="#f2a04a"
-      textColor="#ffffff">
-    </menutech-orders>
+      <p class="hero-tagline" data-en="Authentic Mexican Flavors in the Heart of Milwaukee" data-es="Sabores Mexicanos Auténticos en el Corazón de Milwaukee">Authentic Mexican Flavors in the Heart of Milwaukee</p>
+      <div class="hero-btns">
+        <a href="#order" class="btn btn-primary glow-btn">
+          <i class="fas fa-utensils"></i>
+          <span data-en="Order Online" data-es="Ordenar Ahora">Order Online</span>
+        </a>
+        <a href="#locations" class="btn btn-outline">
+          <i class="fas fa-map-marker-alt"></i>
+          <span data-en="Find Us" data-es="Encuéntranos">Find Us</span>
+        </a>
+      </div>
+      <div class="hero-decoration">
+        <span class="marigold">🌼</span>
+        <span class="skull">💀</span>
+        <span class="marigold">🌼</span>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <i class="fas fa-chevron-down"></i>
     </div>
   </section>
 
-  <section class="about" id="about">
-    <div class="about-inner">
-      <div class="about-text">
-        <p class="section-label">Our Story</p>
-        <h2 class="section-title">A Celebration<br><em>Every Visit</em></h2>
-        <p class="about-body">
-          L Mil Amores Restaurant in Aurora, IL is your destination for authentic, flavor-packed Mexican cuisine. Proudly serving guests from North Aurora, Yorkville, Oswego, and beyond, we are committed to crafting every dish with fresh ingredients and traditional recipes you will love.
-        </p>
-        <p class="about-body">
-          From tacos, tortas, and burritos to quesadillas and other house favorites, every bite brings the vibrant taste of Mexico to your table. Pair your meal with an ice-cold imported or domestic beer, or enjoy one of our signature margaritas for the perfect finishing touch.
-        </p>
-        <p class="about-body">
-          Whether you are gathering with family, meeting friends, or enjoying a night out with coworkers — at L Mil Amores, every visit feels like a celebration.
-        </p>
-        <a href="#contact" class="btn-secondary">Find Us</a>
-      </div>
-      <div class="about-visual">
-        <div class="about-img-frame">
-          <img src="assets/img/TRADITIONAL FAJITAS.jpg" alt="Traditional Fajitas at L Mil Amores" />
-        </div>
-        <div class="about-badge">
-          <span>Authentic</span>
-          <span class="badge-divider">◆</span>
-          <span>Traditional</span>
-          <span class="badge-divider">◆</span>
-          <span>Fresh</span>
-        </div>
-      </div>
+  <!-- ═══════════════════════════════════════════ MARQUEE BANNER -->
+  <div class="marquee-banner">
+    <div class="marquee-track">
+      <span>🌮 Tacos · Burritos · Quesadillas · Tortas · Tamales · Enchiladas · Pozole · Menudo · 🌶️ Auténtico Sabor Mexicano · Mexican Flavors · 🌼 </span>
+      <span>🌮 Tacos · Burritos · Quesadillas · Tortas · Tamales · Enchiladas · Pozole · Menudo · 🌶️ Auténtico Sabor Mexicano · Mexican Flavors · 🌼 </span>
     </div>
-  </section>
+  </div>
 
-  <section class="gallery" id="gallery">
-    <div class="gallery-header">
-      <p class="section-label">Our Kitchen</p>
-      <h2 class="section-title">A Taste of Mexico</h2>
-    </div>
-
-    <div class="carousel-wrapper">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-slide" data-index="0">
-          <img src="assets/img/BARBACOA.jpg" alt="Barbacoa" />
-          <span class="slide-label">Barbacoa</span>
-        </div>
-        <div class="carousel-slide" data-index="1">
-          <img src="assets/img/BISTEC A LA MEXICANA.jpg" alt="Bistec a la Mexicana" />
-          <span class="slide-label">Bistec a la Mexicana</span>
-        </div>
-        <div class="carousel-slide" data-index="2">
-          <img src="assets/img/BURRITOS.jpg" alt="Burritos" />
-          <span class="slide-label">Burritos</span>
-        </div>
-        <div class="carousel-slide" data-index="3">
-          <img src="assets/img/CALDO DE RES 0.jpg" alt="Caldo de Res" />
-          <span class="slide-label">Caldo de Res</span>
-        </div>
-        <div class="carousel-slide" data-index="4">
-          <img src="assets/img/CAN SODA.jpg" alt="Can Soda" />
-          <span class="slide-label">Can Soda</span>
-        </div>
-        <div class="carousel-slide" data-index="5">
-          <img src="assets/img/CARNE ASADA.jpeg" alt="Carne Asada" />
-          <span class="slide-label">Carne Asada</span>
-        </div>
-        <div class="carousel-slide" data-index="6">
-          <img src="assets/img/CHILE RELLENO.jpg" alt="Chile Relleno" />
-          <span class="slide-label">Chile Relleno</span>
-        </div>
-        <div class="carousel-slide" data-index="7">
-          <img src="assets/img/CHILES TOREADOS.jpg" alt="Chiles Toreados" />
-          <span class="slide-label">Chiles Toreados</span>
-        </div>
-        <div class="carousel-slide" data-index="8">
-          <img src="assets/img/FLAN.jpg" alt="Flan" />
-          <span class="slide-label">Flan</span>
-        </div>
-        <div class="carousel-slide" data-index="9">
-          <img src="assets/img/FLAUTAS.0.jpg" alt="Flautas" />
-          <span class="slide-label">Flautas</span>
-        </div>
-        <div class="carousel-slide" data-index="10">
-          <img src="assets/img/FLAUTAS.jpg" alt="Flautas Crispy" />
-          <span class="slide-label">Flautas Crispy</span>
-        </div>
-        <div class="carousel-slide" data-index="11">
-          <img src="assets/img/FRIES WITH CHEESE & MEAT.jpg" alt="Fries with Cheese & Meat" />
-          <span class="slide-label">Fries with Cheese & Meat</span>
-        </div>
-        <div class="carousel-slide" data-index="12">
-          <img src="assets/img/FRIJOLES CHARROS.jpeg" alt="Frijoles Charros" />
-          <span class="slide-label">Frijoles Charros</span>
-        </div>
-        <div class="carousel-slide" data-index="13">
-          <img src="assets/img/GORDITAS.jpg" alt="Gorditas" />
-          <span class="slide-label">Gorditas</span>
-        </div>
-        <div class="carousel-slide" data-index="14">
-          <img src="assets/img/MARGARITA 0.jpg" alt="Margarita" />
-          <span class="slide-label">Signature Margarita</span>
-        </div>
-        <div class="carousel-slide" data-index="15">
-          <img src="assets/img/MARGARITA 1.jpg" alt="Margarita Especial" />
-          <span class="slide-label">Margarita Especial</span>
-        </div>
-        <div class="carousel-slide" data-index="16">
-          <img src="assets/img/NACHOS CON CARNE Y QUESO.jpg" alt="Nachos con Carne y Queso" />
-          <span class="slide-label">Nachos con Carne y Queso</span>
-        </div>
-        <div class="carousel-slide" data-index="17">
-          <img src="assets/img/PECHUGA A LA CREMA.jpg" alt="Pechuga a la Crema" />
-          <span class="slide-label">Pechuga a la Crema</span>
-        </div>
-        <div class="carousel-slide" data-index="18">
-          <img src="assets/img/PIÑA COLADA.jpg" alt="Piña Colada" />
-          <span class="slide-label">Piña Colada</span>
-        </div>
-        <div class="carousel-slide" data-index="19">
-          <img src="assets/img/QUESADILLAS CON CARNE.jpeg" alt="Quesadillas con Carne" />
-          <span class="slide-label">Quesadillas con Carne</span>
-        </div>
-        <div class="carousel-slide" data-index="20">
-          <img src="assets/img/SIDE RICE.jpg" alt="Side Rice" />
-          <span class="slide-label">Side Rice</span>
-        </div>
-        <div class="carousel-slide" data-index="21">
-          <img src="assets/img/SOPES..jpg" alt="Sopes" />
-          <span class="slide-label">Sopes</span>
-        </div>
-        <div class="carousel-slide" data-index="22">
-          <img src="assets/img/TACOS AL PASTOR 0..jpg" alt="Tacos al Pastor" />
-          <span class="slide-label">Tacos al Pastor</span>
-        </div>
-        <div class="carousel-slide" data-index="23">
-          <img src="assets/img/TACOS AL PASTOR.jpg" alt="Tacos al Pastor Plate" />
-          <span class="slide-label">Tacos al Pastor Plate</span>
-        </div>
-        <div class="carousel-slide" data-index="24">
-          <img src="assets/img/TORTAS..jpg" alt="Tortas" />
-          <span class="slide-label">Tortas</span>
-        </div>
-        <div class="carousel-slide" data-index="25">
-          <img src="assets/img/TRADITIONAL FAJITAS.jpg" alt="Traditional Fajitas" />
-          <span class="slide-label">Traditional Fajitas</span>
-        </div>
+  <!-- ═══════════════════════════════════════════ ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-en="Our Story" data-es="Nuestra Historia">Our Story</span>
+        <h2 data-en="Where Tradition Meets Flavor" data-es="Donde la Tradición se Encuentra con el Sabor">Where Tradition Meets Flavor</h2>
+        <div class="skull-divider">💀 🌸 💀</div>
       </div>
-
-      <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous image">&#8249;</button>
-      <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next image">&#8250;</button>
-
-      <div class="carousel-dots" id="carouselDots"></div>
-    </div>
-
-    <div class="lightbox" id="lightbox">
-      <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
-      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">&#8249;</button>
-      <div class="lightbox-img-wrap">
-        <img src="" alt="" id="lightboxImg" />
-        <span class="lightbox-caption" id="lightboxCaption"></span>
-      </div>
-      <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">&#8250;</button>
-    </div>
-  </section>
-
-  </section>
-<!-- MENUTECH AUTO GALLERY -->
-<section class="menu-gallery">
-  <menutech-gallery domain="lmilamoresrestaurant.com"></menutech-gallery>
-</section>
-
-  <section class="videos-section" id="videos">
-    <div class="videos-header">
-      <p class="section-label">Behind The Flavor</p>
-      <h2 class="section-title">See It Come Alive</h2>
-    </div>
-    <div class="videos-grid">
-      <div class="video-card">
-        <video controls preload="metadata" poster="assets/img/TRADITIONAL FAJITAS.jpg">
-          <source src="assets/img/video1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <p class="video-label">L Mil Amores — Experience</p>
-      </div>
-      <div class="video-card">
-        <video controls preload="metadata" poster="assets/img/TACOS AL PASTOR.jpg">
-          <source src="assets/img/video2.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <p class="video-label">L Mil Amores — Kitchen</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="hours-contact" id="hours">
-    <div class="hours-contact-inner">
-      <div class="hours-block">
-        <p class="section-label">When To Visit</p>
-        <h2 class="section-title">Hours</h2>
-        <div class="hours-table">
-          <div class="hours-row">
-            <span class="hours-day">Sunday – Thursday</span>
-            <span class="hours-time">10:00 AM – 9:00 PM</span>
-          </div>
-          <div class="hours-divider"></div>
-          <div class="hours-row">
-            <span class="hours-day">Friday – Saturday</span>
-            <span class="hours-time">10:00 AM – 10:00 PM</span>
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <img src="assets/img/fachada.jpeg" alt="La Chinampa Restaurant" class="about-img" />
+          <div class="about-img-badge">
+            <span>🌮</span>
+            <p data-en="2 Locations" data-es="2 Ubicaciones">2 Locations</p>
+            <p data-en="Milwaukee, WI" data-es="Milwaukee, WI">Milwaukee, WI</p>
           </div>
         </div>
-        <p class="hours-note">Open every day of the week</p>
-      </div>
-
-      <div class="contact-block" id="contact">
-        <p class="section-label">Find Us</p>
-        <h2 class="section-title">Location</h2>
-        <div class="contact-details">
-          <div class="contact-item">
-            <span class="contact-icon">◆</span>
-            <div>
-              <strong>Address</strong>
-              <p>518 S Lake St, Aurora, IL 60506</p>
+        <div class="about-text">
+          <p data-en="La Chinampa Mexican Food brings the vibrant, authentic flavors of Mexico straight to the heart of Milwaukee. With two beloved locations serving the community, we've become a cornerstone of Milwaukee's culinary landscape." data-es="La Chinampa Mexican Food trae los sabores auténticos y vibrantes de México directamente al corazón de Milwaukee. Con dos queridas ubicaciones que sirven a la comunidad, nos hemos convertido en un pilar del paisaje culinario de Milwaukee.">La Chinampa Mexican Food brings the vibrant, authentic flavors of Mexico straight to the heart of Milwaukee. With two beloved locations serving the community, we've become a cornerstone of Milwaukee's culinary landscape.</p>
+          <p data-en="Our recipes are inspired by generations of tradition — from slow-cooked meats to hand-pressed tortillas, every dish tells a story of love, culture, and home. Whether you visit us on 2nd Street or National Ave, you'll always find a warm welcome and an even warmer plate." data-es="Nuestras recetas están inspiradas en generaciones de tradición — desde carnes cocidas a fuego lento hasta tortillas hechas a mano, cada platillo cuenta una historia de amor, cultura y hogar. Ya sea que nos visites en la 2nd Street o en National Ave, siempre encontrarás una cálida bienvenida y un plato aún más cálido.">Our recipes are inspired by generations of tradition — from slow-cooked meats to hand-pressed tortillas, every dish tells a story of love, culture, and home. Whether you visit us on 2nd Street or National Ave, you'll always find a warm welcome and an even warmer plate.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">2</span>
+              <span class="stat-label" data-en="Locations" data-es="Ubicaciones">Locations</span>
             </div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">◆</span>
-            <div>
-              <strong>Phone</strong>
-              <p><a href="tel:6308968727">630-896-8727</a></p>
+            <div class="stat-divider">🌼</div>
+            <div class="stat">
+              <span class="stat-num">100%</span>
+              <span class="stat-label" data-en="Authentic" data-es="Auténtico">Authentic</span>
             </div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">◆</span>
-            <div>
-              <strong>Serving</strong>
-              <p>Aurora · North Aurora · Yorkville · Oswego & beyond</p>
+            <div class="stat-divider">🌼</div>
+            <div class="stat">
+              <span class="stat-num">❤️</span>
+              <span class="stat-label" data-en="Made with Love" data-es="Hecho con Amor">Made with Love</span>
             </div>
           </div>
         </div>
-        <div class="social-links">
-          <a href="https://www.facebook.com/lmilamoresmexicanrestaurant" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            <span>Facebook</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ GALLERY / CAROUSEL -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-en="Our Dishes" data-es="Nuestros Platillos">Our Dishes</span>
+        <h2 data-en="A Feast for Your Eyes" data-es="Un Festín para tus Ojos">A Feast for Your Eyes</h2>
+        <div class="skull-divider">💀 🌸 💀</div>
+      </div>
+      <div class="carousel-wrap">
+        <div class="carousel" id="main-carousel">
+          <div class="carousel-track" id="carousel-track">
+            <div class="carousel-slide" data-index="2">
+              <img src="assets/img/food1.jpeg" alt="La Chinampa – Dish 1" onclick="openLightbox(2)" />
+              <div class="slide-caption" data-en="Traditional Flavors" data-es="Sabores Tradicionales">Traditional Flavors</div>
+            </div>
+            <div class="carousel-slide" data-index="3">
+              <img src="assets/img/food2.jpeg" alt="La Chinampa – Dish 2" onclick="openLightbox(3)" />
+              <div class="slide-caption" data-en="Fresh Ingredients" data-es="Ingredientes Frescos">Fresh Ingredients</div>
+            </div>
+            <div class="carousel-slide" data-index="4">
+              <img src="assets/img/food3.jpeg" alt="La Chinampa – Dish 3" onclick="openLightbox(4)" />
+              <div class="slide-caption" data-en="Made with Love" data-es="Hecho con Amor">Made with Love</div>
+            </div>
+            <div class="carousel-slide" data-index="5">
+              <img src="assets/img/food4.jpeg" alt="La Chinampa – Dish 4" onclick="openLightbox(5)" />
+              <div class="slide-caption" data-en="Authentic Cuisine" data-es="Cocina Auténtica">Authentic Cuisine</div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn prev" id="prev-btn" onclick="prevSlide()" aria-label="Previous">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-btn next" id="next-btn" onclick="nextSlide()" aria-label="Next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="carousel-dots" id="carousel-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-inner" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+      <button class="lightbox-prev" onclick="lightboxPrev()"><i class="fas fa-chevron-left"></i></button>
+      <img id="lightbox-img" src="" alt="" />
+      <button class="lightbox-next" onclick="lightboxNext()"><i class="fas fa-chevron-right"></i></button>
+      <p id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ LOCATIONS -->
+  <section id="locations">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-en="Find Us" data-es="Encuéntranos">Find Us</span>
+        <h2 data-en="Our Two Locations" data-es="Nuestras Dos Ubicaciones">Our Two Locations</h2>
+        <div class="skull-divider">💀 🌸 💀</div>
+      </div>
+      <div class="locations-grid">
+
+        <!-- Location 1 -->
+        <div class="location-card">
+          <div class="location-card-header">
+            <span class="location-num">01</span>
+            <h3>La Chinampa<br /><span>Mexican Food</span></h3>
+          </div>
+          <div class="location-card-body">
+            <div class="location-info">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>405 S 2nd St, Milwaukee, WI 53204</span>
+            </div>
+            <div class="location-info">
+              <i class="fas fa-phone"></i>
+              <a href="tel:4142494971">(414) 249-4971</a>
+            </div>
+            <div class="location-hours">
+              <i class="fas fa-clock"></i>
+              <div>
+                <p><strong data-en="Mon – Thu:" data-es="Lun – Jue:">Mon – Thu:</strong> 10 AM – 9 PM</p>
+                <p><strong data-en="Fri – Sat:" data-es="Vie – Sáb:">Fri – Sat:</strong> 10 AM – 1 AM</p>
+                <p><strong data-en="Sunday:" data-es="Domingo:">Sunday:</strong> <span data-en="Closed" data-es="Cerrado">Closed</span></p>
+              </div>
+            </div>
+            <div class="location-social">
+              <a href="https://www.facebook.com/lachinampamexicanfood" target="_blank" class="social-btn fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/chinampa2025/" target="_blank" class="social-btn ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://share.google/TzPWEKkbKzHgyl9yM" target="_blank" class="social-btn gg" aria-label="Google"><i class="fab fa-google"></i></a>
+            </div>
+            <a href="https://www.google.com/maps?q=405+S+2nd+St,+Milwaukee,+WI+53204" target="_blank" class="btn btn-outline map-btn">
+              <i class="fas fa-map"></i>
+              <span data-en="View on Map" data-es="Ver en Mapa">View on Map</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Location 2 -->
+        <div class="location-card">
+          <div class="location-card-header">
+            <span class="location-num">02</span>
+            <h3>La Chinampa <span>#2</span></h3>
+          </div>
+          <div class="location-card-body">
+            <div class="location-info">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>3500 W National Ave, Milwaukee, WI 53215</span>
+            </div>
+            <div class="location-info">
+              <i class="fas fa-phone"></i>
+              <a href="tel:4142495909">(414) 249-5909</a>
+            </div>
+            <div class="location-hours">
+              <i class="fas fa-clock"></i>
+              <div>
+                <p><strong data-en="Tue – Sun:" data-es="Mar – Dom:">Tue – Sun:</strong> 10 AM – 10 PM</p>
+                <p><strong data-en="Monday:" data-es="Lunes:">Monday:</strong> <span data-en="Closed" data-es="Cerrado">Closed</span></p>
+              </div>
+            </div>
+            <div class="location-social">
+              <a href="#" class="social-btn fb disabled" aria-label="Facebook (Coming Soon)"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-btn ig disabled" aria-label="Instagram (Coming Soon)"><i class="fab fa-instagram"></i></a>
+              <a href="https://maps.app.goo.gl/QtTffbfk9w7rPJRn7" target="_blank" class="social-btn gg" aria-label="Google"><i class="fab fa-google"></i></a>
+            </div>
+            <a href="https://maps.app.goo.gl/QtTffbfk9w7rPJRn7" target="_blank" class="btn btn-outline map-btn">
+              <i class="fas fa-map"></i>
+              <span data-en="View on Map" data-es="Ver en Mapa">View on Map</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ ORDER ONLINE -->
+  <section id="order">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-en="Order Now" data-es="Ordenar Ahora">Order Now</span>
+        <h2 data-en="Ready to Eat? 🌮" data-es="¿Listo para Comer? 🌮">Ready to Eat? 🌮</h2>
+        <p class="section-sub" data-en="Order directly from either of our locations – fast, fresh, and delicious!" data-es="Ordena directamente desde cualquiera de nuestras ubicaciones – ¡rápido, fresco y delicioso!">Order directly from either of our locations – fast, fresh, and delicious!</p>
+        <div class="skull-divider">💀 🌸 💀</div>
+      </div>
+
+      <div class="order-grid">
+        <!-- Order Location 1 -->
+        <div class="order-card">
+          <div class="order-card-label">
+            <span class="location-num">01</span>
+            <h3>La Chinampa Mexican Food</h3>
+            <p>405 S 2nd St, Milwaukee</p>
+          </div>
+          <div class="order-widget-wrap">
+            <menutech-orders
+              cuid="f5f1a966-db79-4a7c-9441-806c62f7efbc"
+              ruid="bd80354a-bd08-4661-8778-1f39b5fd3e57"
+              color="#ffffff"
+              background="#f2a04a"
+              textColor="#ffffff">
+            </menutech-orders>
+          </div>
+          <a href="https://www.lachinampamexicanfood.online/ordering/?facebook=true&restaurant_uid=bd80354a-bd08-4661-8778-1f39b5fd3e57&company_uid=f5f1a966-db79-4a7c-9441-806c62f7efbc" target="_blank" class="btn btn-primary glow-btn fallback-order">
+            <i class="fas fa-shopping-bag"></i>
+            <span data-en="Order from Location 1" data-es="Ordenar Ubicación 1">Order from Location 1</span>
           </a>
-          <a href="https://www.instagram.com/lmilamoresmex/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            <span>Instagram</span>
-          </a>
-          <a href="https://www.tiktok.com/@el.festin.restaur" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
-            <span>TikTok</span>
+        </div>
+
+        <!-- Order Location 2 -->
+        <div class="order-card">
+          <div class="order-card-label">
+            <span class="location-num">02</span>
+            <h3>La Chinampa #2</h3>
+            <p>3500 W National Ave, Milwaukee</p>
+          </div>
+          <div class="order-widget-wrap">
+            <menutech-orders
+              cuid="f1200698-e58e-4d20-8110-57fa81a1fd75"
+              ruid="6340865d-de08-4eb5-88dd-ed721aa0d387"
+              color="#ffffff"
+              background="#f2a04a"
+              textColor="#ffffff">
+            </menutech-orders>
+          </div>
+          <a href="https://www.menu-technology.com/ordering/?facebook=true&restaurant_uid=6340865d-de08-4eb5-88dd-ed721aa0d387&company_uid=f1200698-e58e-4d20-8110-57fa81a1fd75" target="_blank" class="btn btn-primary glow-btn fallback-order">
+            <i class="fas fa-shopping-bag"></i>
+            <span data-en="Order from Location 2" data-es="Ordenar Ubicación 2">Order from Location 2</span>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="site-footer">
+  <!-- ═══════════════════════════════════════════ VIDEOS -->
+  <section id="videos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-en="See It Live" data-es="Véalo en Vivo">See It Live</span>
+        <h2 data-en="Behind the Flavors" data-es="Detrás de los Sabores">Behind the Flavors</h2>
+        <div class="skull-divider">💀 🌸 💀</div>
+      </div>
+      <div class="videos-grid">
+        <div class="video-card">
+          <div class="video-placeholder">
+            <i class="fab fa-facebook"></i>
+            <p data-en="Follow us on Facebook for videos & updates!" data-es="¡Síguenos en Facebook para videos y actualizaciones!">Follow us on Facebook for videos &amp; updates!</p>
+            <a href="https://www.facebook.com/lachinampamexicanfood" target="_blank" class="btn btn-primary">
+              <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-placeholder">
+            <i class="fab fa-instagram"></i>
+            <p data-en="Watch our Reels on Instagram!" data-es="¡Mira nuestros Reels en Instagram!">Watch our Reels on Instagram!</p>
+            <a href="https://www.instagram.com/chinampa2025/" target="_blank" class="btn btn-primary">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-en="Get in Touch" data-es="Contáctanos">Get in Touch</span>
+        <h2 data-en="We'd Love to Hear From You" data-es="Nos Encantaría Saber de Ti">We'd Love to Hear From You</h2>
+        <div class="skull-divider">💀 🌸 💀</div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <h4>Location 1</h4>
+          <a href="tel:4142494971">(414) 249-4971</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <h4>Location 2</h4>
+          <a href="tel:4142495909">(414) 249-5909</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fab fa-facebook-f"></i></div>
+          <h4>Facebook</h4>
+          <a href="https://www.facebook.com/lachinampamexicanfood" target="_blank">@lachinampamexicanfood</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+          <h4>Instagram</h4>
+          <a href="https://www.instagram.com/chinampa2025/" target="_blank">@chinampa2025</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FOOTER -->
+  <footer id="footer">
     <div class="footer-inner">
-      <img src="assets/img/MilAmoresLogo.png" alt="L Mil Amores" class="footer-logo" />
-      <div class="footer-info">
-        <p class="footer-slogan">El auténtico sabor mexicano que te hace sentir vivo</p>
-        <p>518 S Lake St, Aurora, IL 60506 &nbsp;|&nbsp; <a href="tel:6308968727">630-896-8727</a></p>
-        <p class="footer-copy">&copy; 2026 L Mil Amores Restaurant. All rights reserved.</p>
+      <div class="footer-logo">
+        <img src="assets/img/logochinampa.png" alt="La Chinampa" />
+        <p data-en="Authentic Mexican Food in Milwaukee, WI" data-es="Comida Mexicana Auténtica en Milwaukee, WI">Authentic Mexican Food in Milwaukee, WI</p>
       </div>
-      <div class="footer-powered">
-        <img src="assets/img/menutechlogo.png" alt="Menutech" class="menutech-logo" />
-        <span>Powered by Menutech</span>
+      <div class="footer-links">
+        <a href="#about" data-en="About" data-es="Nosotros">About</a>
+        <a href="#gallery" data-en="Gallery" data-es="Galería">Gallery</a>
+        <a href="#locations" data-en="Locations" data-es="Ubicaciones">Locations</a>
+        <a href="#order" data-en="Order" data-es="Ordenar">Order</a>
+        <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/lachinampamexicanfood" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/chinampa2025/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://share.google/TzPWEKkbKzHgyl9yM" target="_blank" aria-label="Google"><i class="fab fa-google"></i></a>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2026 La Chinampa Mexican Food. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        <div class="powered-by">
+          <span data-en="Powered by" data-es="Impulsado por">Powered by</span>
+          <a href="https://menutech.xyz" target="_blank" class="menutech-link">
+            <img src="assets/img/menutechlogo.png" alt="MenuTech" class="menutech-logo" />
+          </a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script>
-    const toggle = document.getElementById('nav-toggle');
-    const nav = document.getElementById('main-nav');
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
-      toggle.classList.toggle('active');
-    });
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        toggle.classList.remove('active');
-      });
-    });
-
-    const slides = document.querySelectorAll('.carousel-slide');
-    const track = document.getElementById('carouselTrack');
-    const dotsContainer = document.getElementById('carouselDots');
-    let current = 0;
-    const total = slides.length;
-
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.classList.add('dot');
-      dot.setAttribute('aria-label', `Slide ${i + 1}`);
-      if (i === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goTo(i));
-      dotsContainer.appendChild(dot);
-    });
-
-    function goTo(index) {
-      current = (index + total) % total;
-      track.style.transform = `translateX(-${current * 100}%)`;
-      document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
-    }
-
-    document.getElementById('carouselPrev').addEventListener('click', () => goTo(current - 1));
-    document.getElementById('carouselNext').addEventListener('click', () => goTo(current + 1));
-
-    let startX = 0;
-    track.addEventListener('touchstart', e => startX = e.touches[0].clientX, { passive: true });
-    track.addEventListener('touchend', e => {
-      const diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
-    });
-
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    let lightboxIndex = 0;
-
-    slides.forEach((slide, i) => {
-      slide.addEventListener('click', () => openLightbox(i));
-    });
-
-    function openLightbox(i) {
-      lightboxIndex = i;
-      const img = slides[i].querySelector('img');
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightboxCaption.textContent = slides[i].querySelector('.slide-label').textContent;
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-    document.getElementById('lightboxPrev').addEventListener('click', () => openLightbox((lightboxIndex - 1 + total) % total));
-    document.getElementById('lightboxNext').addEventListener('click', () => openLightbox((lightboxIndex + 1) % total));
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-    document.addEventListener('keydown', e => {
-      if (!lightbox.classList.contains('open')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') openLightbox((lightboxIndex - 1 + total) % total);
-      if (e.key === 'ArrowRight') openLightbox((lightboxIndex + 1) % total);
-    });
-
-    const header = document.querySelector('.site-header');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 60);
-    });
-  </script>
-  
-  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
-<script src="https://menutech.xyz/menutechUI.min.js"></script>
-<!-- Menutech Gallery -->
-<script src="https://menutech.io/menutechUI.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
