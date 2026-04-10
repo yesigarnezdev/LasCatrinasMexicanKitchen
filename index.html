@@ -14,33 +14,34 @@
   <title>La Chinampa Mexican Food – Milwaukee, WI</title>
   <link rel="icon" type="image/png" href="assets/img/logochinampa.png" />
   <link rel="stylesheet" href="styles.css" />
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Abril+Fatface&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- Menutech Script -->
   <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
   <script src="https://menutech.xyz/menutechUI.min.js"></script>
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════════ PARTICLES BG -->
   <div id="particles"></div>
 
-  <!-- ═══════════════════════════════════════════ AUDIO PLAYER -->
+  <div class="petals-container">
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+  </div>
+
   <div id="audio-player">
     <button id="audio-btn" onclick="toggleAudio()" title="Toggle Music">
       <i class="fas fa-music" id="audio-icon"></i>
     </button>
     <audio id="bg-audio" loop>
-      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+      <source src="assets/img/coco.mp3" type="audio/mpeg" />
     </audio>
-    <span id="audio-label">🎵 Recuérdame</span>
+    <span id="audio-label">🎺</span>
   </div>
 
-  <!-- ═══════════════════════════════════════════ NAV -->
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
@@ -64,9 +65,21 @@
     </div>
   </nav>
 
-  <!-- ═══════════════════════════════════════════ HERO -->
   <section id="hero">
     <div class="hero-bg-overlay"></div>
+    
+    <div class="velitas-group left">
+      <div class="vela v1"><div class="flama"></div></div>
+      <div class="vela v3"><div class="flama"></div></div>
+      <div class="vela v2"><div class="flama"></div></div>
+    </div>
+    
+    <div class="velitas-group right">
+      <div class="vela v2"><div class="flama"></div></div>
+      <div class="vela v1"><div class="flama"></div></div>
+      <div class="vela v3"><div class="flama"></div></div>
+    </div>
+
     <div class="hero-content">
       <div class="hero-logo-wrap">
         <img src="assets/img/logochinampa.png" alt="La Chinampa" class="hero-logo" />
@@ -93,7 +106,6 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ MARQUEE BANNER -->
   <div class="marquee-banner">
     <div class="marquee-track">
       <span>🌮 Tacos · Burritos · Quesadillas · Tortas · Tamales · Enchiladas · Pozole · Menudo · 🌶️ Auténtico Sabor Mexicano · Mexican Flavors · 🌼 </span>
@@ -101,7 +113,6 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════ ABOUT -->
   <section id="about">
     <div class="container">
       <div class="section-header">
@@ -142,7 +153,6 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ GALLERY / CAROUSEL -->
   <section id="gallery">
     <div class="container">
       <div class="section-header">
@@ -182,7 +192,14 @@
     </div>
   </section>
 
-  <!-- Lightbox -->
+  <section class="menutech-gallery-section" id="menutech-gallery" style="background: var(--cream); padding: 6rem 0;">
+    <div class="gallery-header visible">
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+      <menutech-gallery domain="lachinampamexicanfood.online"></menutech-gallery>
+    </div>
+  </section>
+
   <div id="lightbox" onclick="closeLightbox()">
     <div class="lightbox-inner" onclick="event.stopPropagation()">
       <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
@@ -193,7 +210,6 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════ LOCATIONS -->
   <section id="locations">
     <div class="container">
       <div class="section-header">
@@ -203,7 +219,6 @@
       </div>
       <div class="locations-grid">
 
-        <!-- Location 1 -->
         <div class="location-card">
           <div class="location-card-header">
             <span class="location-num">01</span>
@@ -238,7 +253,6 @@
           </div>
         </div>
 
-        <!-- Location 2 -->
         <div class="location-card">
           <div class="location-card-header">
             <span class="location-num">02</span>
@@ -261,10 +275,18 @@
               </div>
             </div>
             <div class="location-social">
-              <a href="#" class="social-btn fb disabled" aria-label="Facebook (Coming Soon)"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social-btn ig disabled" aria-label="Instagram (Coming Soon)"><i class="fab fa-instagram"></i></a>
-              <a href="https://maps.app.goo.gl/QtTffbfk9w7rPJRn7" target="_blank" class="social-btn gg" aria-label="Google"><i class="fab fa-google"></i></a>
-            </div>
+  <a href="https://www.facebook.com/share/1NfdqVu9A3/?mibextid=wwXIfr" target="_blank" class="social-btn fb" aria-label="Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <a href="https://www.instagram.com/chinampa.la?igsh=MWFsd3FzN2Ixam94Yg%3D%3D&utm_source=qr" target="_blank" class="social-btn ig" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="https://maps.app.goo.gl/QtTffbfk9w7rPJRn7" target="_blank" class="social-btn gg" aria-label="Google">
+    <i class="fab fa-google"></i>
+  </a>
+</div>
             <a href="https://maps.app.goo.gl/QtTffbfk9w7rPJRn7" target="_blank" class="btn btn-outline map-btn">
               <i class="fas fa-map"></i>
               <span data-en="View on Map" data-es="Ver en Mapa">View on Map</span>
@@ -276,18 +298,16 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ ORDER ONLINE -->
   <section id="order">
     <div class="container">
       <div class="section-header">
         <span class="section-tag" data-en="Order Now" data-es="Ordenar Ahora">Order Now</span>
-        <h2 data-en="Ready to Eat? 🌮" data-es="¿Listo para Comer? 🌮">Ready to Eat? 🌮</h2>
+        <h2 data-en="Ready to Eat? 🌮" data-es="¿Listo para Comer? 🌮">Ready to Eat?</h2>
         <p class="section-sub" data-en="Order directly from either of our locations – fast, fresh, and delicious!" data-es="Ordena directamente desde cualquiera de nuestras ubicaciones – ¡rápido, fresco y delicioso!">Order directly from either of our locations – fast, fresh, and delicious!</p>
         <div class="skull-divider">💀 🌸 💀</div>
       </div>
 
       <div class="order-grid">
-        <!-- Order Location 1 -->
         <div class="order-card">
           <div class="order-card-label">
             <span class="location-num">01</span>
@@ -309,7 +329,6 @@
           </a>
         </div>
 
-        <!-- Order Location 2 -->
         <div class="order-card">
           <div class="order-card-label">
             <span class="location-num">02</span>
@@ -334,7 +353,6 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ VIDEOS -->
   <section id="videos">
     <div class="container">
       <div class="section-header">
@@ -346,7 +364,7 @@
         <div class="video-card">
           <div class="video-placeholder">
             <i class="fab fa-facebook"></i>
-            <p data-en="Follow us on Facebook for videos & updates!" data-es="¡Síguenos en Facebook para videos y actualizaciones!">Follow us on Facebook for videos &amp; updates!</p>
+            <p data-en="Follow us on Facebook for videos & updates!" data-es="¡Síguenos en Facebook para videos y actualizaciones!">Follow us on Facebook for videos & updates!</p>
             <a href="https://www.facebook.com/lachinampamexicanfood" target="_blank" class="btn btn-primary">
               <i class="fab fa-facebook-f"></i> Facebook
             </a>
@@ -365,7 +383,6 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ CONTACT -->
   <section id="contact">
     <div class="container">
       <div class="section-header">
@@ -398,7 +415,6 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ FOOTER -->
   <footer id="footer">
     <div class="footer-inner">
       <div class="footer-logo">
@@ -418,7 +434,7 @@
         <a href="https://share.google/TzPWEKkbKzHgyl9yM" target="_blank" aria-label="Google"><i class="fab fa-google"></i></a>
       </div>
       <div class="footer-copy">
-        <p>&copy; 2026 La Chinampa Mexican Food. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        <p>© 2026 La Chinampa Mexican Food. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
         <div class="powered-by">
           <span data-en="Powered by" data-es="Impulsado por">Powered by</span>
           <a href="https://menutech.xyz" target="_blank" class="menutech-link">
@@ -428,7 +444,9 @@
       </div>
     </div>
   </footer>
-
+  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+  <script src="https://menutech.xyz/menutechUI.min.js"></script>
+  <script src="https://menutech.io/menutechUI.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
