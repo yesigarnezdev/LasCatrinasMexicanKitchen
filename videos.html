@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Watch videos from Las Catrinas Mexican Kitchen — authentic Mexican food, kitchen moments, and restaurant atmosphere in Lusby, MD." />
+  <meta name="keywords" content="Las Catrinas videos, Mexican kitchen, Lusby MD restaurant" />
+  <meta name="author" content="Las Catrinas Mexican Kitchen" />
+  <meta property="og:title" content="Videos | Las Catrinas Mexican Kitchen" />
+  <meta property="og:description" content="Watch videos from Las Catrinas Mexican Kitchen in Lusby, MD." />
+  <meta name="theme-color" content="#1a0a00" />
+  <link rel="icon" type="image/jpg" href="assets/img/platillo12.jpg" />
+  <title>Videos | Las Catrinas Mexican Kitchen</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="videos.css" />
+</head>
+<body class="videos-page">
+
+  <canvas id="particles-canvas"></canvas>
+
+  <div class="skulls-bg" aria-hidden="true">
+    <span class="skull s1">💀</span>
+    <span class="skull s2">🌸</span>
+    <span class="skull s3">💀</span>
+    <span class="skull s4">🌹</span>
+    <span class="skull s5">💀</span>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/img/platillo12.jpg" alt="Las Catrinas Logo" class="logo-img" />
+        <div class="logo-text">
+          <span class="logo-main">Las Catrinas</span>
+          <span class="logo-sub">Mexican Kitchen</span>
+        </div>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#menu" class="nav-link">Menu</a></li>
+        <li><a href="index.html#gallery" class="nav-link">Restaurant</a></li>
+        <li><a href="videos.html" class="nav-link active">Videos</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        <li>
+          <a href="https://www.lascatrinasmexicankitchen.com/ordering/?facebook=true&restaurant_uid=f0807059-ac44-4520-b3c5-4da7660bfafb&company_uid=f799474e-5323-48fb-95d4-d5bfd86ffd8e" target="_blank" class="btn-order nav-order">Order Online</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- VIDEOS HERO -->
+  <section class="videos-hero">
+    <div class="videos-hero-content">
+      <span class="section-tag light">Behind the Scenes</span>
+      <h1 class="videos-hero-title">Our <em>Story</em><br/>In Motion</h1>
+      <div class="hero-divider"><span>❧</span></div>
+      <p class="videos-hero-sub">Watch the passion and tradition behind every dish we serve</p>
+    </div>
+  </section>
+
+  <!-- VIDEOS GRID SECTION -->
+  <section class="videos-section">
+    <div class="container">
+      <div class="videos-grid">
+
+        <div class="video-card featured reveal-up">
+          <div class="video-thumb-wrap">
+            <video muted loop playsinline preload="metadata" class="video-bg-preview">
+              <source src="assets/img/videoHeroSection.mp4" type="video/mp4" />
+            </video>
+            <div class="video-overlay">
+              <button class="play-btn" data-video="assets/img/videoHeroSection.mp4" aria-label="Play video">
+                <span class="play-icon">▶</span>
+              </button>
+            </div>
+            <span class="video-tag">Featured</span>
+          </div>
+          <div class="video-info">
+            <h3>Welcome to Las Catrinas</h3>
+            <p>Experience the vibrant atmosphere and authentic flavors of our Mexican kitchen.</p>
+          </div>
+        </div>
+
+        <div class="video-card reveal-up" style="--delay:0.1s">
+          <div class="video-thumb-wrap">
+            <video muted loop playsinline preload="metadata" class="video-bg-preview">
+              <source src="assets/img/videorestaurante.mp4" type="video/mp4" />
+            </video>
+            <div class="video-overlay">
+              <button class="play-btn" data-video="assets/img/videorestaurante.mp4" aria-label="Play video">
+                <span class="play-icon">▶</span>
+              </button>
+            </div>
+          </div>
+          <div class="video-info">
+            <h3>Inside the Restaurant</h3>
+            <p>A glimpse into our warm and welcoming dining space.</p>
+          </div>
+        </div>
+
+        <div class="video-card reveal-up" style="--delay:0.2s">
+          <div class="video-thumb-wrap">
+            <video muted loop playsinline preload="metadata" class="video-bg-preview">
+              <source src="assets/img/videocomida.mp4" type="video/mp4" />
+            </video>
+            <div class="video-overlay">
+              <button class="play-btn" data-video="assets/img/videocomida.mp4" aria-label="Play video">
+                <span class="play-icon">▶</span>
+              </button>
+            </div>
+          </div>
+          <div class="video-info">
+            <h3>Our Food in Action</h3>
+            <p>Watch our dishes being prepared fresh with authentic ingredients.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Video player">
+      <div class="video-modal-inner">
+        <button class="video-modal-close" id="video-modal-close" aria-label="Close video">✕</button>
+        <video controls class="modal-video" id="modal-video">
+          <source src="" type="video/mp4" id="modal-video-source" />
+        </video>
+      </div>
+    </div>
+    <div class="video-modal-backdrop" id="video-modal-backdrop"></div>
+  </section>
+
+  <!-- CTA -->
+  <section class="videos-cta">
+    <div class="container text-center">
+      <h2 class="section-title light">Ready to Taste<br/><em>the Real Thing?</em></h2>
+      <div class="hero-cta" style="justify-content:center; margin-top:2rem;">
+        <a href="https://www.lascatrinasmexicankitchen.com/ordering/?facebook=true&restaurant_uid=f0807059-ac44-4520-b3c5-4da7660bfafb&company_uid=f799474e-5323-48fb-95d4-d5bfd86ffd8e" target="_blank" class="btn-order btn-hero-primary">Order Online</a>
+        <a href="index.html#contact" class="btn-hero-secondary">Find Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/img/platillo12.jpg" alt="Las Catrinas Logo" class="footer-logo" />
+        <div>
+          <p class="footer-name">Las Catrinas Mexican Kitchen</p>
+          <p class="footer-address">182 Village Center Drive, Lusby, MD 20657</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#menu">Menu</a>
+        <a href="index.html#gallery">Restaurant</a>
+        <a href="videos.html">Videos</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/lascatrinas_mexicankitchen/" target="_blank" aria-label="Instagram" class="footer-social-btn">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Las Catrinas Mexican Kitchen. All rights reserved.</p>
+      <a href="https://menutech.xyz" target="_blank" class="menutech-credit">
+        <img src="assets/img/menutechlogo.png" alt="Powered by Menutech" class="menutech-logo" />
+        <span>Powered by Menutech</span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="videos.js"></script>
+</body>
+</html>

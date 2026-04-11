@@ -3,450 +3,363 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="La Chinampa Mexican Food – Authentic Mexican cuisine in Milwaukee, WI. Two locations serving the best tacos, burritos, and traditional Mexican dishes." />
-  <meta name="keywords" content="La Chinampa, Mexican food, Milwaukee, tacos, burritos, authentic Mexican restaurant, Wisconsin" />
-  <meta name="author" content="La Chinampa Mexican Food" />
-  <meta property="og:title" content="La Chinampa Mexican Food – Milwaukee, WI" />
-  <meta property="og:description" content="Authentic Mexican flavors in the heart of Milwaukee. Two locations, one soul. Order online today!" />
-  <meta property="og:image" content="assets/img/logochinampa.png" />
+  <meta name="description" content="Las Catrinas Mexican Kitchen — Authentic Mexican cuisine in Lusby, MD. Experience the best tacos, burritos, and traditional Mexican dishes. Open Mon–Sat 11am–9pm, Sun 12pm–9pm." />
+  <meta name="keywords" content="Mexican restaurant, Lusby MD, authentic Mexican food, tacos, burritos, Las Catrinas, Mexican kitchen, Calvert County" />
+  <meta name="author" content="Las Catrinas Mexican Kitchen" />
+  <meta property="og:title" content="Las Catrinas Mexican Kitchen | Lusby, MD" />
+  <meta property="og:description" content="Authentic Mexican cuisine in Lusby, MD. Delicious food, great drinks, and warm hospitality." />
   <meta property="og:type" content="restaurant" />
-  <meta name="theme-color" content="#3d0066" />
-  <title>La Chinampa Mexican Food – Milwaukee, WI</title>
-  <link rel="icon" type="image/png" href="assets/img/logochinampa.png" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta property="og:url" content="https://lascatrinasmexicankitchen.com" />
+  <meta name="theme-color" content="#1a0a00" />
+  <link rel="icon" type="image/jpg" href="assets/img/LasCatrinasKitchenLOGO.png" />
+  <title>Las Catrinas Mexican Kitchen | Lusby, MD</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Abril+Fatface&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+
   <script src="https://menutech.xyz/menutechUI.min.js"></script>
+  <script src="https://menutech.io/menutechUI.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div id="particles"></div>
+  <canvas id="particles-canvas"></canvas>
 
-  <div class="petals-container">
-    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-    <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+  <div class="skulls-bg" aria-hidden="true">
+    <span class="skull s1">💀</span>
+    <span class="skull s2">🌸</span>
+    <span class="skull s3">💀</span>
+    <span class="skull s4">🌹</span>
+    <span class="skull s5">💀</span>
+    <span class="skull s6">🌺</span>
+    <span class="skull s7">💀</span>
   </div>
 
-  <div id="audio-player">
-    <button id="audio-btn" onclick="toggleAudio()" title="Toggle Music">
-      <i class="fas fa-music" id="audio-icon"></i>
-    </button>
-    <audio id="bg-audio" loop>
-      <source src="assets/img/coco.mp3" type="audio/mpeg" />
-    </audio>
-    <span id="audio-label">🎺</span>
-  </div>
-
-  <nav id="navbar">
-    <div class="nav-inner">
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
       <a href="#hero" class="nav-logo">
-        <img src="assets/img/logochinampa.png" alt="La Chinampa Logo" />
+        <img src="assets/img/LasCatrinasKitchenLOGO.png" alt="Las Catrinas Logo" class="logo-img" />
       </a>
-      <button class="burger" id="burger" aria-label="Menu" onclick="toggleMenu()">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about" onclick="closeMenu()"><span data-en="About" data-es="Nosotros">About</span></a></li>
-        <li><a href="#gallery" onclick="closeMenu()"><span data-en="Gallery" data-es="Galería">Gallery</span></a></li>
-        <li><a href="#locations" onclick="closeMenu()"><span data-en="Locations" data-es="Ubicaciones">Locations</span></a></li>
-        <li><a href="#order" onclick="closeMenu()"><span data-en="Order" data-es="Ordenar">Order</span></a></li>
-        <li><a href="#contact" onclick="closeMenu()"><span data-en="Contact" data-es="Contacto">Contact</span></a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#gallery" class="nav-link">Restaurant</a></li>
+        <li><a href="#videos-link" class="nav-link">Videos</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
         <li>
-          <button class="lang-toggle" id="lang-btn" onclick="toggleLang()">
-            <span id="lang-label">🌐 ES</span>
-          </button>
+          <a href="https://www.lascatrinasmexicankitchen.com/ordering/?facebook=true&restaurant_uid=f0807059-ac44-4520-b3c5-4da7660bfafb&company_uid=f799474e-5323-48fb-95d4-d5bfd86ffd8e" target="_blank" class="btn-order nav-order">Order Online</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <section id="hero">
-    <div class="hero-bg-overlay"></div>
-    
-    <div class="velitas-group left">
-      <div class="vela v1"><div class="flama"></div></div>
-      <div class="vela v3"><div class="flama"></div></div>
-      <div class="vela v2"><div class="flama"></div></div>
-    </div>
-    
-    <div class="velitas-group right">
-      <div class="vela v2"><div class="flama"></div></div>
-      <div class="vela v1"><div class="flama"></div></div>
-      <div class="vela v3"><div class="flama"></div></div>
+  <section class="hero" id="hero">
+    <div class="hero-video-wrap">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="assets/img/videoHeroSection.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
     </div>
 
     <div class="hero-content">
       <div class="hero-logo-wrap">
-        <img src="assets/img/logochinampa.png" alt="La Chinampa" class="hero-logo" />
+        <img src="assets/img/LasCatrinasKitchenLOGO.png" alt="Las Catrinas Logo" class="hero-logo" />
       </div>
-      <p class="hero-tagline" data-en="Authentic Mexican Flavors in the Heart of Milwaukee" data-es="Sabores Mexicanos Auténticos en el Corazón de Milwaukee">Authentic Mexican Flavors in the Heart of Milwaukee</p>
-      <div class="hero-btns">
-        <a href="#order" class="btn btn-primary glow-btn">
-          <i class="fas fa-utensils"></i>
-          <span data-en="Order Online" data-es="Ordenar Ahora">Order Online</span>
-        </a>
-        <a href="#locations" class="btn btn-outline">
-          <i class="fas fa-map-marker-alt"></i>
-          <span data-en="Find Us" data-es="Encuéntranos">Find Us</span>
-        </a>
+      <div class="hero-badge">✦ Authentic Mexican Cuisine ✦</div>
+      <h1 class="hero-title">
+        <span class="line1">Las Catrinas</span>
+        <span class="line2">Mexican Kitchen</span>
+      </h1>
+      <p class="hero-sub">Flavor. Culture. Tradition.</p>
+      <div class="hero-divider"><span>❧</span></div>
+      <div class="hero-cta">
+        <a href="https://www.lascatrinasmexicankitchen.com/ordering/?facebook=true&restaurant_uid=f0807059-ac44-4520-b3c5-4da7660bfafb&company_uid=f799474e-5323-48fb-95d4-d5bfd86ffd8e" target="_blank" class="btn-order btn-hero-primary">Order Online</a>
+        <a href="#menu" class="btn-hero-secondary">Explore Menu</a>
       </div>
-      <div class="hero-decoration">
-        <span class="marigold">🌼</span>
-        <span class="skull">💀</span>
-        <span class="marigold">🌼</span>
+      <div class="hero-hours">
+        <span>🕐 Mon–Sat: 11am – 9pm</span>
+        <span class="divider-dot">·</span>
+        <span>Sun: 12pm – 9pm</span>
       </div>
     </div>
-    <div class="scroll-hint">
-      <i class="fas fa-chevron-down"></i>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="scroll-indicator"><span></span></div>
+    </div>
+
+    <div class="hero-catrina-deco" aria-hidden="true">
+      <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg" class="catrina-svg">
+        <ellipse cx="60" cy="65" rx="42" ry="50" fill="white" opacity="0.08"/>
+        <ellipse cx="44" cy="58" rx="12" ry="14" fill="white" opacity="0.15"/>
+        <ellipse cx="76" cy="58" rx="12" ry="14" fill="white" opacity="0.15"/>
+        <ellipse cx="60" cy="85" rx="8" ry="5" fill="white" opacity="0.1"/>
+        <path d="M48 98 Q60 108 72 98" stroke="white" stroke-width="2" opacity="0.2" fill="none"/>
+        <circle cx="20" cy="30" r="8" fill="#c0392b" opacity="0.4"/>
+        <circle cx="100" cy="30" r="8" fill="#c0392b" opacity="0.4"/>
+        <circle cx="10" cy="50" r="5" fill="#e67e22" opacity="0.3"/>
+        <circle cx="110" cy="50" r="5" fill="#e67e22" opacity="0.3"/>
+      </svg>
     </div>
   </section>
 
-  <div class="marquee-banner">
-    <div class="marquee-track">
-      <span>🌮 Tacos · Burritos · Quesadillas · Tortas · Tamales · Enchiladas · Pozole · Menudo · 🌶️ Auténtico Sabor Mexicano · Mexican Flavors · 🌼 </span>
-      <span>🌮 Tacos · Burritos · Quesadillas · Tortas · Tamales · Enchiladas · Pozole · Menudo · 🌶️ Auténtico Sabor Mexicano · Mexican Flavors · 🌼 </span>
-    </div>
-  </div>
-
-  <section id="about">
+  <section class="about" id="about">
+    <div class="section-ornament top" aria-hidden="true">❦</div>
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag" data-en="Our Story" data-es="Nuestra Historia">Our Story</span>
-        <h2 data-en="Where Tradition Meets Flavor" data-es="Donde la Tradición se Encuentra con el Sabor">Where Tradition Meets Flavor</h2>
-        <div class="skull-divider">💀 🌸 💀</div>
-      </div>
       <div class="about-grid">
-        <div class="about-img-wrap">
-          <img src="assets/img/fachada.jpeg" alt="La Chinampa Restaurant" class="about-img" />
-          <div class="about-img-badge">
-            <span>🌮</span>
-            <p data-en="2 Locations" data-es="2 Ubicaciones">2 Locations</p>
-            <p data-en="Milwaukee, WI" data-es="Milwaukee, WI">Milwaukee, WI</p>
+        <div class="about-img-wrap reveal-left">
+          <div class="about-img-frame">
+            <img src="assets/img/letrerorestauranteporfuera.jpg" alt="Las Catrinas Mexican Kitchen exterior" class="about-img" />
+            <div class="img-border-deco"></div>
+          </div>
+          <div class="about-badge-card">
+            <span class="badge-icon">🌮</span>
+            <span class="badge-text">Authentic Flavors</span>
           </div>
         </div>
-        <div class="about-text">
-          <p data-en="La Chinampa Mexican Food brings the vibrant, authentic flavors of Mexico straight to the heart of Milwaukee. With two beloved locations serving the community, we've become a cornerstone of Milwaukee's culinary landscape." data-es="La Chinampa Mexican Food trae los sabores auténticos y vibrantes de México directamente al corazón de Milwaukee. Con dos queridas ubicaciones que sirven a la comunidad, nos hemos convertido en un pilar del paisaje culinario de Milwaukee.">La Chinampa Mexican Food brings the vibrant, authentic flavors of Mexico straight to the heart of Milwaukee. With two beloved locations serving the community, we've become a cornerstone of Milwaukee's culinary landscape.</p>
-          <p data-en="Our recipes are inspired by generations of tradition — from slow-cooked meats to hand-pressed tortillas, every dish tells a story of love, culture, and home. Whether you visit us on 2nd Street or National Ave, you'll always find a warm welcome and an even warmer plate." data-es="Nuestras recetas están inspiradas en generaciones de tradición — desde carnes cocidas a fuego lento hasta tortillas hechas a mano, cada platillo cuenta una historia de amor, cultura y hogar. Ya sea que nos visites en la 2nd Street o en National Ave, siempre encontrarás una cálida bienvenida y un plato aún más cálido.">Our recipes are inspired by generations of tradition — from slow-cooked meats to hand-pressed tortillas, every dish tells a story of love, culture, and home. Whether you visit us on 2nd Street or National Ave, you'll always find a warm welcome and an even warmer plate.</p>
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-num">2</span>
-              <span class="stat-label" data-en="Locations" data-es="Ubicaciones">Locations</span>
-            </div>
-            <div class="stat-divider">🌼</div>
-            <div class="stat">
-              <span class="stat-num">100%</span>
-              <span class="stat-label" data-en="Authentic" data-es="Auténtico">Authentic</span>
-            </div>
-            <div class="stat-divider">🌼</div>
-            <div class="stat">
-              <span class="stat-num">❤️</span>
-              <span class="stat-label" data-en="Made with Love" data-es="Hecho con Amor">Made with Love</span>
-            </div>
-          </div>
+        <div class="about-content reveal-right">
+          <span class="section-tag">Our Story</span>
+          <h2 class="section-title">A Taste of Mexico<br/><em>in Lusby, MD</em></h2>
+          <div class="title-underline"></div>
+          <p class="about-text">
+            At <strong>Las Catrinas Mexican Kitchen</strong> we offer meals of excellent quality and invite you to try our delicious food. The key to our success is simple: providing quality consistent food that tastes great every single time.
+          </p>
+          <p class="about-text">
+            We pride ourselves on serving our customers delicious genuine dishes. Eat delicious food. Grab a drink. But most of all, <em>relax!</em> We thank you from the bottom of our hearts for your continued support.
+          </p>
+          <a href="https://www.lascatrinasmexicankitchen.com/ordering/?facebook=true&restaurant_uid=f0807059-ac44-4520-b3c5-4da7660bfafb&company_uid=f799474e-5323-48fb-95d4-d5bfd86ffd8e" target="_blank" class="btn-order">Order Online</a>
         </div>
       </div>
     </div>
+    <div class="section-ornament bottom" aria-hidden="true">❦</div>
   </section>
 
-  <section id="gallery">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag" data-en="Our Dishes" data-es="Nuestros Platillos">Our Dishes</span>
-        <h2 data-en="A Feast for Your Eyes" data-es="Un Festín para tus Ojos">A Feast for Your Eyes</h2>
-        <div class="skull-divider">💀 🌸 💀</div>
-      </div>
-      <div class="carousel-wrap">
-        <div class="carousel" id="main-carousel">
-          <div class="carousel-track" id="carousel-track">
-            <div class="carousel-slide" data-index="2">
-              <img src="assets/img/food1.jpeg" alt="La Chinampa – Dish 1" onclick="openLightbox(2)" />
-              <div class="slide-caption" data-en="Traditional Flavors" data-es="Sabores Tradicionales">Traditional Flavors</div>
-            </div>
-            <div class="carousel-slide" data-index="3">
-              <img src="assets/img/food2.jpeg" alt="La Chinampa – Dish 2" onclick="openLightbox(3)" />
-              <div class="slide-caption" data-en="Fresh Ingredients" data-es="Ingredientes Frescos">Fresh Ingredients</div>
-            </div>
-            <div class="carousel-slide" data-index="4">
-              <img src="assets/img/food3.jpeg" alt="La Chinampa – Dish 3" onclick="openLightbox(4)" />
-              <div class="slide-caption" data-en="Made with Love" data-es="Hecho con Amor">Made with Love</div>
-            </div>
-            <div class="carousel-slide" data-index="5">
-              <img src="assets/img/food4.jpeg" alt="La Chinampa – Dish 4" onclick="openLightbox(5)" />
-              <div class="slide-caption" data-en="Authentic Cuisine" data-es="Cocina Auténtica">Authentic Cuisine</div>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-btn prev" id="prev-btn" onclick="prevSlide()" aria-label="Previous">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="carousel-btn next" id="next-btn" onclick="nextSlide()" aria-label="Next">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-        <div class="carousel-dots" id="carousel-dots"></div>
-      </div>
-    </div>
-  </section>
+  <section class="promo-banner">
+  <div class="promo-content">
 
-  <section class="menutech-gallery-section" id="menutech-gallery" style="background: var(--cream); padding: 6rem 0;">
-    <div class="gallery-header visible">
+    <div class="promo-img-wrapper">
+      <img src="assets/img/promotiondish.jpg" alt="Promotion dish" class="promo-img" id="promoOpen" />
     </div>
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-      <menutech-gallery domain="lachinampamexicanfood.online"></menutech-gallery>
-    </div>
-  </section>
 
-  <div id="lightbox" onclick="closeLightbox()">
-    <div class="lightbox-inner" onclick="event.stopPropagation()">
-      <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
-      <button class="lightbox-prev" onclick="lightboxPrev()"><i class="fas fa-chevron-left"></i></button>
-      <img id="lightbox-img" src="" alt="" />
-      <button class="lightbox-next" onclick="lightboxNext()"><i class="fas fa-chevron-right"></i></button>
-      <p id="lightbox-caption"></p>
+    <div class="promo-text">
+      <span class="promo-tag">Today's Special</span>
+      <h3>Don't Miss Our<br/>Special Dishes</h3>
+
+      <a href="https://www.lascatrinasmexicankitchen.com/ordering/?facebook=true&restaurant_uid=f0807059-ac44-4520-b3c5-4da7660bfafb&company_uid=f799474e-5323-48fb-95d4-d5bfd86ffd8e"
+         target="_blank"
+         class="btn-order">
+         Order Now
+      </a>
     </div>
+
   </div>
+</section>
 
-  <section id="locations">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag" data-en="Find Us" data-es="Encuéntranos">Find Us</span>
-        <h2 data-en="Our Two Locations" data-es="Nuestras Dos Ubicaciones">Our Two Locations</h2>
-        <div class="skull-divider">💀 🌸 💀</div>
-      </div>
-      <div class="locations-grid">
-
-        <div class="location-card">
-          <div class="location-card-header">
-            <span class="location-num">01</span>
-            <h3>La Chinampa<br /><span>Mexican Food</span></h3>
-          </div>
-          <div class="location-card-body">
-            <div class="location-info">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>405 S 2nd St, Milwaukee, WI 53204</span>
-            </div>
-            <div class="location-info">
-              <i class="fas fa-phone"></i>
-              <a href="tel:4142494971">(414) 249-4971</a>
-            </div>
-            <div class="location-hours">
-              <i class="fas fa-clock"></i>
-              <div>
-                <p><strong data-en="Mon – Thu:" data-es="Lun – Jue:">Mon – Thu:</strong> 10 AM – 9 PM</p>
-                <p><strong data-en="Fri – Sat:" data-es="Vie – Sáb:">Fri – Sat:</strong> 10 AM – 1 AM</p>
-                <p><strong data-en="Sunday:" data-es="Domingo:">Sunday:</strong> <span data-en="Closed" data-es="Cerrado">Closed</span></p>
-              </div>
-            </div>
-            <div class="location-social">
-              <a href="https://www.facebook.com/lachinampamexicanfood" target="_blank" class="social-btn fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/chinampa2025/" target="_blank" class="social-btn ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="https://share.google/TzPWEKkbKzHgyl9yM" target="_blank" class="social-btn gg" aria-label="Google"><i class="fab fa-google"></i></a>
-            </div>
-            <a href="https://www.google.com/maps?q=405+S+2nd+St,+Milwaukee,+WI+53204" target="_blank" class="btn btn-outline map-btn">
-              <i class="fas fa-map"></i>
-              <span data-en="View on Map" data-es="Ver en Mapa">View on Map</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="location-card">
-          <div class="location-card-header">
-            <span class="location-num">02</span>
-            <h3>La Chinampa <span>#2</span></h3>
-          </div>
-          <div class="location-card-body">
-            <div class="location-info">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>3500 W National Ave, Milwaukee, WI 53215</span>
-            </div>
-            <div class="location-info">
-              <i class="fas fa-phone"></i>
-              <a href="tel:4142495909">(414) 249-5909</a>
-            </div>
-            <div class="location-hours">
-              <i class="fas fa-clock"></i>
-              <div>
-                <p><strong data-en="Tue – Sun:" data-es="Mar – Dom:">Tue – Sun:</strong> 10 AM – 10 PM</p>
-                <p><strong data-en="Monday:" data-es="Lunes:">Monday:</strong> <span data-en="Closed" data-es="Cerrado">Closed</span></p>
-              </div>
-            </div>
-            <div class="location-social">
-  <a href="https://www.facebook.com/share/1NfdqVu9A3/?mibextid=wwXIfr" target="_blank" class="social-btn fb" aria-label="Facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-
-  <a href="https://www.instagram.com/chinampa.la?igsh=MWFsd3FzN2Ixam94Yg%3D%3D&utm_source=qr" target="_blank" class="social-btn ig" aria-label="Instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
-
-  <a href="https://maps.app.goo.gl/QtTffbfk9w7rPJRn7" target="_blank" class="social-btn gg" aria-label="Google">
-    <i class="fab fa-google"></i>
-  </a>
+<!-- MODAL -->
+<div class="promo-modal" id="promoModal">
+  <span class="close-modal" id="closePromo">&times;</span>
+  <img src="assets/img/promotiondish.jpg" alt="Expanded Dish" class="modal-img">
 </div>
-            <a href="https://maps.app.goo.gl/QtTffbfk9w7rPJRn7" target="_blank" class="btn btn-outline map-btn">
-              <i class="fas fa-map"></i>
-              <span data-en="View on Map" data-es="Ver en Mapa">View on Map</span>
-            </a>
-          </div>
-        </div>
 
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <span class="section-tag">Our Dishes</span>
+      <h2 class="section-title text-center">Flavors That<br/><em>Tell a Story</em></h2>
+      <div class="title-underline center"></div>
+
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev" id="carousel-prev" aria-label="Previous">❮</button>
+        <div class="carousel-track-wrap">
+          <div class="carousel-track" id="carousel-track">
+            </div>
+        </div>
+        <button class="carousel-btn next" id="carousel-next" aria-label="Next">❯</button>
       </div>
+      <div class="carousel-dots" id="carousel-dots"></div>
     </div>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
+      <button class="lightbox-nav lb-prev" id="lb-prev" aria-label="Previous image">❮</button>
+      <div class="lightbox-img-wrap">
+        <img src="" alt="" class="lightbox-img" id="lightbox-img" />
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-nav lb-next" id="lb-next" aria-label="Next image">❯</button>
+    </div>
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
   </section>
 
-  <section id="order">
+  <section class="restaurant-gallery" id="gallery">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag" data-en="Order Now" data-es="Ordenar Ahora">Order Now</span>
-        <h2 data-en="Ready to Eat? 🌮" data-es="¿Listo para Comer? 🌮">Ready to Eat?</h2>
-        <p class="section-sub" data-en="Order directly from either of our locations – fast, fresh, and delicious!" data-es="Ordena directamente desde cualquiera de nuestras ubicaciones – ¡rápido, fresco y delicioso!">Order directly from either of our locations – fast, fresh, and delicious!</p>
-        <div class="skull-divider">💀 🌸 💀</div>
-      </div>
-
-      <div class="order-grid">
-        <div class="order-card">
-          <div class="order-card-label">
-            <span class="location-num">01</span>
-            <h3>La Chinampa Mexican Food</h3>
-            <p>405 S 2nd St, Milwaukee</p>
-          </div>
-          <div class="order-widget-wrap">
-            <menutech-orders
-              cuid="f5f1a966-db79-4a7c-9441-806c62f7efbc"
-              ruid="bd80354a-bd08-4661-8778-1f39b5fd3e57"
-              color="#ffffff"
-              background="#f2a04a"
-              textColor="#ffffff">
-            </menutech-orders>
-          </div>
-          <a href="https://www.lachinampamexicanfood.online/ordering/?facebook=true&restaurant_uid=bd80354a-bd08-4661-8778-1f39b5fd3e57&company_uid=f5f1a966-db79-4a7c-9441-806c62f7efbc" target="_blank" class="btn btn-primary glow-btn fallback-order">
-            <i class="fas fa-shopping-bag"></i>
-            <span data-en="Order from Location 1" data-es="Ordenar Ubicación 1">Order from Location 1</span>
-          </a>
+      <span class="section-tag">Our Space</span>
+      <h2 class="section-title text-center">Inside Our<br/><em>Kitchen & Soul</em></h2>
+      <div class="title-underline center"></div>
+      <div class="rest-grid">
+        <div class="rest-item large reveal-up">
+          <img src="assets/img/restaurantepordentro.jpg" alt="Restaurant interior" loading="lazy" />
+          <div class="rest-overlay"><span>Our Dining Room</span></div>
         </div>
-
-        <div class="order-card">
-          <div class="order-card-label">
-            <span class="location-num">02</span>
-            <h3>La Chinampa #2</h3>
-            <p>3500 W National Ave, Milwaukee</p>
-          </div>
-          <div class="order-widget-wrap">
-            <menutech-orders
-              cuid="f1200698-e58e-4d20-8110-57fa81a1fd75"
-              ruid="6340865d-de08-4eb5-88dd-ed721aa0d387"
-              color="#ffffff"
-              background="#f2a04a"
-              textColor="#ffffff">
-            </menutech-orders>
-          </div>
-          <a href="https://www.menu-technology.com/ordering/?facebook=true&restaurant_uid=6340865d-de08-4eb5-88dd-ed721aa0d387&company_uid=f1200698-e58e-4d20-8110-57fa81a1fd75" target="_blank" class="btn btn-primary glow-btn fallback-order">
-            <i class="fas fa-shopping-bag"></i>
-            <span data-en="Order from Location 2" data-es="Ordenar Ubicación 2">Order from Location 2</span>
-          </a>
+        <div class="rest-item reveal-up" style="--delay:0.1s">
+          <img src="assets/img/restaurantepordentro2.jpg" alt="Restaurant interior" loading="lazy" />
+          <div class="rest-overlay"><span>Warm Ambiance</span></div>
+        </div>
+        <div class="rest-item reveal-up" style="--delay:0.2s">
+          <img src="assets/img/restaurantepordentro3.jpg" alt="Restaurant interior" loading="lazy" />
+          <div class="rest-overlay"><span>Come & Enjoy</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="videos">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag" data-en="See It Live" data-es="Véalo en Vivo">See It Live</span>
-        <h2 data-en="Behind the Flavors" data-es="Detrás de los Sabores">Behind the Flavors</h2>
-        <div class="skull-divider">💀 🌸 💀</div>
-      </div>
-      <div class="videos-grid">
-        <div class="video-card">
-          <div class="video-placeholder">
-            <i class="fab fa-facebook"></i>
-            <p data-en="Follow us on Facebook for videos & updates!" data-es="¡Síguenos en Facebook para videos y actualizaciones!">Follow us on Facebook for videos & updates!</p>
-            <a href="https://www.facebook.com/lachinampamexicanfood" target="_blank" class="btn btn-primary">
-              <i class="fab fa-facebook-f"></i> Facebook
-            </a>
-          </div>
-        </div>
-        <div class="video-card">
-          <div class="video-placeholder">
-            <i class="fab fa-instagram"></i>
-            <p data-en="Watch our Reels on Instagram!" data-es="¡Mira nuestros Reels en Instagram!">Watch our Reels on Instagram!</p>
-            <a href="https://www.instagram.com/chinampa2025/" target="_blank" class="btn btn-primary">
-              <i class="fab fa-instagram"></i> Instagram
-            </a>
-          </div>
-        </div>
-      </div>
+  <section class="videos-cta-section" id="videos-link">
+    <div class="video-cta-bg">
+      <video autoplay muted loop playsinline class="video-cta-bg-video">
+        <source src="assets/img/videorestaurante.mp4" type="video/mp4" />
+      </video>
+      <div class="video-cta-overlay"></div>
+    </div>
+    <div class="container video-cta-content">
+      <span class="section-tag light">Behind the Scenes</span>
+      <h2 class="section-title light">See the Magic<br/><em>in Our Kitchen</em></h2>
+      <p class="video-cta-desc">Watch how we craft our authentic dishes with love and tradition.</p>
+      <a href="videos.html" class="btn-hero-secondary btn-videos-cta">Watch Our Videos <span>▶</span></a>
     </div>
   </section>
 
-  <section id="contact">
+  <section class="menutech-gallery-section" id="media-gallery">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag" data-en="Get in Touch" data-es="Contáctanos">Get in Touch</span>
-        <h2 data-en="We'd Love to Hear From You" data-es="Nos Encantaría Saber de Ti">We'd Love to Hear From You</h2>
-        <div class="skull-divider">💀 🌸 💀</div>
-      </div>
+      <span class="section-tag">Photo Gallery</span>
+      <h2 class="section-title text-center">Our<br/><em>Gallery</em></h2>
+      <div class="title-underline center"></div>
+      <menutech-gallery domain="lascatrinasmexicankitchen.com"></menutech-gallery>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <span class="section-tag">Find Us</span>
+      <h2 class="section-title text-center">Visit<br/><em>Las Catrinas</em></h2>
+      <div class="title-underline center"></div>
+
       <div class="contact-grid">
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fas fa-phone"></i></div>
-          <h4>Location 1</h4>
-          <a href="tel:4142494971">(414) 249-4971</a>
+        <div class="contact-info reveal-left">
+          <div class="info-card">
+            <div class="info-icon">📍</div>
+            <div>
+              <h4>Address</h4>
+              <p>182 Village Center Drive<br/>Lusby, MD 20657</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <p><a href="tel:2405874228">240-587-4228</a></p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">🕐</div>
+            <div>
+              <h4>Hours</h4>
+              <p>Monday – Saturday: 11am – 9pm<br/>Sunday: 12pm – 9pm</p>
+            </div>
+          </div>
+          <div class="social-links">
+            <h4>Follow Us</h4>
+            <div class="socials">
+              <a href="https://www.instagram.com/lascatrinas_mexicankitchen/" target="_blank" class="social-btn instagram" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+              </a>
+            </div>
+          </div>
+          <div class="order-widget-wrap">
+            <menutech-orders
+              cuid="f799474e-5323-48fb-95d4-d5bfd86ffd8e"
+              ruid="f0807059-ac44-4520-b3c5-4da7660bfafb"
+              color="#ffffff"
+              background="#c0392b"
+              textColor="#ffffff">
+            </menutech-orders>
+            <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+          </div>
         </div>
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fas fa-phone"></i></div>
-          <h4>Location 2</h4>
-          <a href="tel:4142495909">(414) 249-5909</a>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fab fa-facebook-f"></i></div>
-          <h4>Facebook</h4>
-          <a href="https://www.facebook.com/lachinampamexicanfood" target="_blank">@lachinampamexicanfood</a>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fab fa-instagram"></i></div>
-          <h4>Instagram</h4>
-          <a href="https://www.instagram.com/chinampa2025/" target="_blank">@chinampa2025</a>
+
+        <div class="map-wrap reveal-right">
+          <iframe
+            title="Las Catrinas Mexican Kitchen Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3116.3!2d-76.4500!3d38.3800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s182+Village+Center+Drive%2C+Lusby%2C+MD+20657!5e0!3m2!1sen!2sus!4v1"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="map-pin-label">
+            <span>📍</span> 182 Village Center Drive, Lusby, MD
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer id="footer">
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <img src="assets/img/logochinampa.png" alt="La Chinampa" />
-        <p data-en="Authentic Mexican Food in Milwaukee, WI" data-es="Comida Mexicana Auténtica en Milwaukee, WI">Authentic Mexican Food in Milwaukee, WI</p>
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/img/LasCatrinasKitchenLOGO.png" alt="Las Catrinas Logo" class="footer-logo" />
+        <div>
+          <p class="footer-name">Las Catrinas Mexican Kitchen</p>
+          <p class="footer-address">182 Village Center Drive, Lusby, MD 20657</p>
+        </div>
       </div>
       <div class="footer-links">
-        <a href="#about" data-en="About" data-es="Nosotros">About</a>
-        <a href="#gallery" data-en="Gallery" data-es="Galería">Gallery</a>
-        <a href="#locations" data-en="Locations" data-es="Ubicaciones">Locations</a>
-        <a href="#order" data-en="Order" data-es="Ordenar">Order</a>
-        <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Restaurant</a>
+        <a href="videos.html">Videos</a>
+        <a href="#contact">Contact</a>
       </div>
       <div class="footer-social">
-        <a href="https://www.facebook.com/lachinampamexicanfood" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/chinampa2025/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://share.google/TzPWEKkbKzHgyl9yM" target="_blank" aria-label="Google"><i class="fab fa-google"></i></a>
-      </div>
-      <div class="footer-copy">
-        <p>© 2026 La Chinampa Mexican Food. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
-        <div class="powered-by">
-          <span data-en="Powered by" data-es="Impulsado por">Powered by</span>
-          <a href="https://menutech.xyz" target="_blank" class="menutech-link">
-            <img src="assets/img/menutechlogo.png" alt="MenuTech" class="menutech-logo" />
-          </a>
-        </div>
+        <a href="https://www.instagram.com/lascatrinas_mexicankitchen/" target="_blank" aria-label="Instagram" class="footer-social-btn">
+          <i class="fab fa-instagram"></i>
+        </a>
       </div>
     </div>
+    <div class="footer-bottom">
+      <p>© 2026 Las Catrinas Mexican Kitchen. All rights reserved.</p>
+      <a href="https://menutech.xyz" target="_blank" class="menutech-credit">
+        <img src="assets/img/menutechlogo.png" alt="Powered by Menutech" class="menutech-logo" />
+        <span>Powered by Menutech</span>
+      </a>
+    </div>
   </footer>
-  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
-  <script src="https://menutech.xyz/menutechUI.min.js"></script>
-  <script src="https://menutech.io/menutechUI.js"></script>
+<script>
+const promoOpen = document.getElementById("promoOpen");
+const promoModal = document.getElementById("promoModal");
+const closePromo = document.getElementById("closePromo");
+
+promoOpen.addEventListener("click", () => {
+  promoModal.classList.add("active");
+});
+
+closePromo.addEventListener("click", () => {
+  promoModal.classList.remove("active");
+});
+
+promoModal.addEventListener("click", (e) => {
+  if(e.target === promoModal){
+    promoModal.classList.remove("active");
+  }
+});
+</script>
   <script src="script.js"></script>
 </body>
 </html>
